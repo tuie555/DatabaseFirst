@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class Unidata {
 private int rank2024;
 private int rank2023;
@@ -6,7 +9,7 @@ private String countryCode;
 private String country;
 private String size;
 private String focus;
-private String researchLevel; 
+private String researchLevel;
 private int age;
 private String status;
 private float academicReputationScore;
@@ -240,4 +243,45 @@ public float getOverallScore() {
 public void setOverallScore(float overallScore) {
     this.overallScore = overallScore;
 }
+public List<String> getAllFieldsQuoted() {
+    return Arrays.asList(
+        quote(String.valueOf(rank2024)),
+        quote(String.valueOf(rank2023)),
+        quote(institutionName),
+        quote(countryCode),
+        quote(country),
+        quote(size),
+        quote(focus),
+        quote(researchLevel),
+        quote(String.valueOf(age)),
+        quote(status),
+        quote(String.valueOf(academicReputationScore)),
+        quote(String.valueOf(academicReputationRank)),
+        quote(String.valueOf(employerReputationScore)),
+        quote(String.valueOf(employerReputationRank)),
+        quote(String.valueOf(facultyStudentScore)),
+        quote(String.valueOf(facultyStudentRank)),
+        quote(String.valueOf(citationsPerFacultyScore)),
+        quote(String.valueOf(citationsPerFacultyRank)),
+        quote(String.valueOf(internationalFacultyScore)),
+        quote(String.valueOf(internationalFacultyRank)),
+        quote(String.valueOf(internationalStudentsScore)),
+        quote(String.valueOf(internationalStudentsRank)),
+        quote(String.valueOf(internationalResearchNetworkScore)),
+        quote(String.valueOf(internationalResearchNetworkRank)),
+        quote(String.valueOf(employmentOutcomesScore)),
+        quote(String.valueOf(employmentOutcomesRank)),
+        quote(String.valueOf(sustainabilityScore)),
+        quote(String.valueOf(sustainabilityRank)),
+        quote(String.valueOf(overallScore))
+    );
+}
+
+private static String quote(String text) {
+    if (text.contains(",") || text.contains("\"")) {
+        return "\"" + text.replace("\"", "\"\"") + "\"";
+    }
+    return text;
+}
+
 }
