@@ -1,0 +1,31 @@
+public class Unidata {
+private int rank2024;
+private int rank2023;
+private String institutionName;
+private String countryCode;
+private String country;
+private String size;
+private String focus;
+private String researchLevel; 
+private int age;
+private String status;
+private float academicReputationScore;
+private int academicReputationRank;
+private float employerReputationScore;
+private int employerReputationRank;
+private float facultyStudentScore;
+private int facultyStudentRank;
+private float citationsPerFacultyScore;
+private int citationsPerFacultyRank;
+private float internationalFacultyScore;
+private int internationalFacultyRank;
+private float internationalStudentsScore;
+private int internationalStudentsRank;
+private float internationalResearchNetworkScore;
+private int internationalResearchNetworkRank;
+private float employmentOutcomesScore;
+private int employmentOutcomesRank;
+private float sustainabilityScore;
+private int sustainabilityRank;
+private float overallScore;
+}
