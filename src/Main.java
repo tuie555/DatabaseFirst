@@ -15,7 +15,7 @@ while (sc.hasNextLine()) {
     String line = sc.nextLine().trim();
     if (line.isEmpty()) continue;
 
-    String[] t = line.split(",", -1); // -1 เพื่อไม่ทิ้งช่องว่างท้าย
+    String[] t = line.split(",", -1); // -1 for keeping trailing empty strings
 
     if (t.length < 29) {
         System.out.println("Short line: " + Arrays.toString(t));
@@ -54,12 +54,10 @@ while (sc.hasNextLine()) {
                     safeParseInt(t[27]),
                     safeParseFloat(t[28])
         );
-        
         dataList.add(data);
-        for (int i = 0; i < dataList.size(); i++) {
-    Unidata uni = dataList.get(i);
+        var index = dataList.size();
+        System.out.println("Parsed data for index " + index + ": " + data.getAllFieldsQuoted());
         
-}
 WriteToFile(dataList, "QS_World University Ranking 2024.csv");
 
     } catch (Exception e) {
@@ -102,12 +100,20 @@ long end = System.currentTimeMillis();
                 + "employmentOutcomesScore,employmentOutcomesRank,"
                 + "sustainabilityScore,sustainabilityRank,overallScore");
             writer.newLine();
+            writer.write("rank display,rank display2,institution,location code,location,size,focus,research,age band,status,ar score,ar rank,er score,er rank,fsr score,fsr rank,cpf score,cpf rank,ifr score,ifr rank,isr score,isr rank,irn score,irn rank,ger score,ger rank,SUS SCORE,SUS RANK,Overall Score");
+            writer.newLine();
             for (Unidata uni : dataList) {
                 String line = String.join(",", uni.getAllFieldsQuoted());
                 writer.write(line);
                 writer.newLine();
                 
             }
+            
+            writer.write("571,601-650,Chiang Mai University,TH,Thailand,"
+            +"XL,FC,HI,4,A,"
+            +"33.8,256,19.3,466,16.4,"
+            +"701+,3.9,701+,5.1,701+,"
+            +"4.1,701+,20.9,538,17.1,495,59.2,252=,20.7"); // Add the last line with CMU data
         } catch (IOException e) {
             System.err.println("Error writing to file: " + e.getMessage());
         }
