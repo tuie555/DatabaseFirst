@@ -58,13 +58,7 @@ while (sc.hasNextLine()) {
         dataList.add(data);
         for (int i = 0; i < dataList.size(); i++) {
     Unidata uni = dataList.get(i);
-    
-    if (uni.getInstitutionName().equalsIgnoreCase("Chiang Mai University")) {
-        uni.setSustainabilityRank(357);
         
-        break;
-    }
-    
 }
 WriteToFile(dataList, "QS_World University Ranking 2024.csv");
 
