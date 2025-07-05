@@ -53,8 +53,6 @@ while (sc.hasNextLine()) {
                     safeParseFloat(t[28])
         );
         dataList.add(data);
-        var index = dataList.size();
-        System.out.println("Parsed data for index " + index + ": " + data.getAllFieldsQuoted());
     } catch (Exception e) {
         System.out.println("Parse error: " + Arrays.toString(t));
     }
@@ -67,7 +65,7 @@ dataList.add(1497, new Unidata(
             "Chiang Mai University",
             "TH","Thailand",
             "XL","FC",
-            "HI",4,"A",
+            "HI",60,"Public research university",
             safeParseFloat("33.8"),
             256,
             safeParseFloat("19.3"),
@@ -85,8 +83,8 @@ dataList.add(1497, new Unidata(
             safeParseFloat("17.1"),
             495,
             safeParseFloat("59.2"),
-            safeParseInt("252="),
-            safeParseFloat("20.7")
+            safeParseInt("=357"),
+            safeParseFloat("30.9")
         ));
         // Write the data to a CSV file
         WriteToFile(dataList, "QS_World University Ranking 2024.csv");
@@ -96,7 +94,7 @@ sc.close();
     private static int safeParseInt(String s) {
         if (s == null || s.trim().isEmpty()) return -1;
         try {
-            return Integer.parseInt(s.replace("=", "").replace("+", "").replace("-", "").replaceAll("[^\\d]", "").trim());
+            return Integer.parseInt(s.replaceAll("[^\\d]", "").trim());
         } catch (NumberFormatException e) {
             return -1;
         }
@@ -106,7 +104,7 @@ sc.close();
     private static float safeParseFloat(String s) {
         if (s == null || s.trim().isEmpty()) return 0f;
         try {
-            return Float.parseFloat(s.replace("=", "").replace("+", "").replace("-", "").trim());
+            return Float.parseFloat(s.replaceAll("[^\\d]", "").trim());
         } catch (NumberFormatException e) {
             return 0f;
         }
@@ -206,5 +204,5 @@ sc.close();
     // Overall SCORE	Float
 
     // Part 3)[Extra credit ] What problem have you found when you are dealing with the tradition database files? Explain in detail?(2 points)
-    // when ReadFile somelines and some colums are empty so i have to use trim() to remove the empty space
-    // and some line have special characters include with interger or float like 123= or 154+ so i have to use replaceAll("[^\\d]", "") to remove the special characters
+    // when ReadFile somelines and some colums are empty so i have to use trim() to remove the empty space.
+    // and some line have special characters include with interger or float like 12.3= or 154+ so i have to use replaceAll("[^\\d]", "") to remove the special characters
