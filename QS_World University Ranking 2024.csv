@@ -1497,4 +1497,4 @@ rank display,rank display2,institution,location code,location,size,focus,researc
 1401,12011400,"""University Politehnica of Timisoara","UPT""",RO,Romania,M,FO,-1,5,0.0,40,601.0,34,601.0,86,701.0,36,701.0,12,701.0,29,701.0,13,701.0,85,701.0,1,701.0
 1401,12011400,Western Washington University,US,United States,L,CO,HI,5,,2.8,601,3.4,601,7.0,701,4.3,701,14.5,676,1.4,701,1.0,701,7.3,701,0.0,-1,0.0
 1401,-1,Zürcher Hochschule Winterthur,CH,Switzerland,,CO,,-1,,5.7,601,6.7,601,0.0,-1,0.0,-1,0.0,-1,0.0,-1,1.7,701,0.0,-1,0.0,-1,0.0
-571,601-650,Chiang Mai University,TH,Thailand,XL,FC,HI,4,A,33.8,256,19.3,466,16.4,701+,3.9,701+,5.1,701+,4.1,701+,20.9,538,17.1,495,59.2,252=,20.7
+571,601650,Chiang Mai University,TH,Thailand,XL,FC,HI,4,A,33.8,256,19.3,466,16.4,701,3.9,701,5.1,701,4.1,701,20.9,538,17.1,495,59.2,252,20.7
