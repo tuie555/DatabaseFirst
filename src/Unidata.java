@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Unidata {
@@ -110,5 +112,9 @@ private static String quote(String text) {
     }
     return text;
 }
-
+    public List<String> sortFields() {
+    List<String> sortedFields = new ArrayList<>(getAllFieldsQuoted());
+    Collections.sort(sortedFields);
+    return sortedFields;
+}
 }
